@@ -26,7 +26,7 @@ router.get("/", verify, async (req, res) => {
 });
 
 router.delete("/", verify, async (req, res) => {
-  const userIds = req.body.userIds; // Assuming you are sending an array of userIds in the request body
+  const userIds = req.body.userIds;
 
   try {
     const deletedUsers = await User.deleteMany({ _id: { $in: userIds } });

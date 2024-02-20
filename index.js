@@ -23,10 +23,10 @@ app.use(express.json());
 app.use(cors());
 
 const corsOptions = {
-  origin: "http://localhost:5173", // or a list of allowed origins
+  origin: "http://localhost:5173",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true, // enable credentials (cookies, authorization headers)
-  optionsSuccessStatus: 204, // respond to preflight requests with 204 No Content
+  credentials: true,
+  optionsSuccessStatus: 204,
 };
 
 app.use(cors(corsOptions));
