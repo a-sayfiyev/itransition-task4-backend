@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const mongooose = require("mongoose");
+const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes/auth.js");
 const userRoute = require("./routes/user.js");
@@ -8,7 +8,7 @@ const cors = require("cors");
 
 dotenv.config();
 
-mongooose
+mongoose
   .connect(process.env.DB_CONNECT, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -18,12 +18,12 @@ mongooose
     console.log(err);
     process.exit(1);
   });
+
 app.use(express.json());
 
-app.use(cors());
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://manageus-sayfiyev.netlify.app",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,
